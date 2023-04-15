@@ -1,0 +1,9 @@
+server:
+  port: 60080
+  servlet:
+    encoding:
+      charset: UTF-8
+      force: true
+spring:
+  application:
+    name: DanceGrade
