@@ -43,7 +43,16 @@ Response: (example: GET /api/data?page=0&name=Stu)
         91.501711,
         96.171609
       ],
-      "scoreAvg": 94.449563
+      "scoreAvg": 94.449563,
+      "actions": [
+        0,
+        1,
+        2,
+        1,
+        2,
+        4,
+        3
+      ]
     },
     {
       "id": 2,
@@ -56,7 +65,14 @@ Response: (example: GET /api/data?page=0&name=Stu)
         100,
         100
       ],
-      "scoreAvg": 100
+      "scoreAvg": 100,
+      "actions": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
     }
   ]
 }
@@ -78,7 +94,7 @@ Response: (example: GET /api/data/1)
   "message": "OK",
   "data": {
     "id": 1,
-    "name": "Student Name",
+    "name": "Student Name 1",
     "studentId": 19532801,
     "scores": [
       98.285001,
@@ -87,7 +103,16 @@ Response: (example: GET /api/data/1)
       91.501711,
       96.171609
     ],
-    "scoreAvg": 94.449563
+    "scoreAvg": 94.449563,
+    "actions": [
+      0,
+      1,
+      2,
+      1,
+      2,
+      4,
+      3
+    ]
   }
 }
 ```
