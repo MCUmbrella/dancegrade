@@ -12,7 +12,8 @@
 	<artifactId>dancegrade</artifactId>
 	<version>1.0.0</version>
 	<name>DanceGrade</name>
-	<description>Backend for DanceGrade</description>
+	<description>The back end of an academic research project on dance grading based on motion sensors and artificial intelligence</description>
+	<url>https://github.com/MCUmbrella/dancegrade</url>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>

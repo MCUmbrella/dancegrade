@@ -129,6 +129,7 @@ JSON parameters:
 - name: String, required
 - scores: Float array, required
 - scoreAvg: Float, required
+- actions: Integer array, required
 
 Response:
 
