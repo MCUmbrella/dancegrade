@@ -28,18 +28,16 @@ public class DataReadController
 
     // List data: GET /api/data?name={name}&page={page}
     @GetMapping(value = "/api/data", produces = APPLICATION_JSON_VALUE)
-    public CommonMappedResult listData(HttpServletRequest req, HttpServletResponse resp, @RequestParam(value = "name", required = false) String name, @RequestParam("page") int page)
+    public CommonMappedResult listData(HttpServletRequest req, HttpServletResponse resp, @RequestParam("page") int page, @RequestParam(value = "name", required = false) String name, @RequestParam(value = "studentId", required = false) Integer studentId)
     {
-        if(name != null)
+        if(name != null || studentId != null)
         {
-            if(!StrUtil.isBlank(name))
-            {
-                ArrayList<JSONObject> data = new ArrayList<>();
-                for(DanceData d : DataManager.findData(name, page))
-                    data.add(d.toJson());
-                return new CommonMappedResult(200, "OK", data);
-            }
-            else return new CommonMappedResult(40003, "Parameter is blank string");
+            if(studentId == null && StrUtil.isBlank(name))
+                return new CommonMappedResult(40003, "Parameter is blank string");
+            ArrayList<JSONObject> data = new ArrayList<>();
+            for(DanceData d : DataManager.findData(name, studentId, page))
+                data.add(d.toJson());
+            return new CommonMappedResult(200, "OK", data);
         }
         else
         {

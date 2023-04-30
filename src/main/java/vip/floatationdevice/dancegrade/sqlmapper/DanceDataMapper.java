@@ -25,8 +25,21 @@ public interface DanceDataMapper
     @Select("SELECT * FROM danceData WHERE id = #{id}")
     DanceData getData(@Param("id") int id);
 
-    @Select("SELECT * FROM danceData WHERE name LIKE printf('%%%s%%', #{name}) LIMIT #{offset}, 20")
-    List<DanceData> findData(@Param("name") String name, @Param("offset") int offset);
+    @Select({
+            "<script>",
+            "SELECT * FROM danceData",
+            "<where>",
+            "<if test='name != null'>",
+            "name LIKE printf('%%%s%%', #{name})",
+            "</if>",
+            "<if test='studentId != null'>",
+            "AND studentId = #{studentId}",
+            "</if>",
+            "</where>",
+            "LIMIT #{offset}, 20",
+            "</script>"
+    })
+    List<DanceData> findData(@Param("name") String name, @Param("studentId") int studentId, @Param("offset") int offset);
 
 // ==================== WRITE RELATED FUNCTIONS ====================
 

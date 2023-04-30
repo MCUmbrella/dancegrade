@@ -131,10 +131,11 @@ public class DataManager
         return session.selectOne("vip.floatationdevice.dancegrade.sqlmapper.DanceDataMapper.getData", id);
     }
 
-    public static List<DanceData> findData(String name, int page)
+    public static List<DanceData> findData(String name, Integer studentId, int page)
     {
         HashMap<String, Object> params = new HashMap<>();
         params.put("name", name);
+        params.put("studentId", studentId);
         params.put("offset", page * 20);
         return session.selectList("vip.floatationdevice.dancegrade.sqlmapper.DanceDataMapper.findData", params);
     }
