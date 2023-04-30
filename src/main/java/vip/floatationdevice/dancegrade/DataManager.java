@@ -136,7 +136,7 @@ public class DataManager
         HashMap<String, Object> params = new HashMap<>();
         params.put("name", name);
         params.put("studentId", studentId);
-        params.put("offset", page * 20);
+        params.put("offset", page * 10);
         return session.selectList("vip.floatationdevice.dancegrade.sqlmapper.DanceDataMapper.findData", params);
     }
 

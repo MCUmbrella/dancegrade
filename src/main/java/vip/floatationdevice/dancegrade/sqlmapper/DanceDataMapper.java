@@ -16,7 +16,7 @@ public interface DanceDataMapper
     @Select("SELECT * FROM danceData")
     List<DanceData> getAllData();
 
-    @Select("SELECT * FROM danceData LIMIT #{offset}, 20")
+    @Select("SELECT * FROM danceData LIMIT #{offset}, 10")
     List<DanceData> getPagedData(@Param("offset") int offset);
 
     @Select("SELECT COUNT(*) FROM danceData WHERE id = #{id}")
