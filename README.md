@@ -124,8 +124,8 @@ Response:
 
 ```json
 {
-  "code": 200,
-  "message": "OK",
+  "code": 201,
+  "message": "Data created",
   "data": null
 }
 ```
@@ -142,7 +142,7 @@ Response: (example: DELETE /api/data/1)
 ```json
 {
   "code": 200,
-  "message": "OK",
+  "message": "Data deleted",
   "data": null
 }
 ```
