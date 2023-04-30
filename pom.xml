@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>vip.floatationdevice</groupId>
 	<artifactId>dancegrade</artifactId>
-	<version>1.0.0</version>
+	<version>1.1.0</version>
 	<name>DanceGrade</name>
 	<description>The back end of an academic research project on dance grading based on motion sensors and artificial intelligence</description>
 	<url>https://github.com/MCUmbrella/dancegrade</url>
