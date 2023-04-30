@@ -13,6 +13,7 @@ import vip.floatationdevice.dancegrade.data.DanceData;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
@@ -34,9 +35,13 @@ public class DataReadController
         {
             if(studentId == null && StrUtil.isBlank(name))
                 return new CommonMappedResult(40003, "Parameter is blank string");
-            ArrayList<JSONObject> data = new ArrayList<>();
+            HashMap<String, Object> data = new HashMap<>();
+            int count = DataManager.findCount(name, studentId);
+            ArrayList<JSONObject> list = new ArrayList<>();
             for(DanceData d : DataManager.findData(name, studentId, page))
-                data.add(d.toJson());
+                list.add(d.toJson());
+            data.put("count", count);
+            data.put("list", list);
             return new CommonMappedResult(200, "OK", data);
         }
         else

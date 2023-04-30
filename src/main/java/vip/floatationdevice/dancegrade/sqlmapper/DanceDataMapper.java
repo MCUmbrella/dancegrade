@@ -36,10 +36,25 @@ public interface DanceDataMapper
             "AND studentId = #{studentId}",
             "</if>",
             "</where>",
-            "LIMIT #{offset}, 20",
+            "LIMIT #{offset}, 10",
             "</script>"
     })
-    List<DanceData> findData(@Param("name") String name, @Param("studentId") int studentId, @Param("offset") int offset);
+    List<DanceData> findData(@Param("name") String name, @Param("studentId") Integer studentId, @Param("offset") int offset);
+
+    @Select({
+            "<script>",
+            "SELECT COUNT(*) FROM danceData",
+            "<where>",
+            "<if test='name != null'>",
+            "name LIKE printf('%%%s%%', #{name})",
+            "</if>",
+            "<if test='studentId != null'>",
+            "AND studentId = #{studentId}",
+            "</if>",
+            "</where>",
+            "</script>"
+    })
+    int findCount(@Param("name") String name, @Param("studentId") Integer studentId);
 
 // ==================== WRITE RELATED FUNCTIONS ====================
 

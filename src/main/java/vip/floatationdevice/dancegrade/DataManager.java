@@ -117,7 +117,7 @@ public class DataManager
 
     public static List<DanceData> getPagedData(int page)
     {
-        return session.selectList("vip.floatationdevice.dancegrade.sqlmapper.DanceDataMapper.getPagedData", page * 20);
+        return session.selectList("vip.floatationdevice.dancegrade.sqlmapper.DanceDataMapper.getPagedData", page * 10);
     }
 
     public static boolean hasData(int id)
@@ -138,6 +138,14 @@ public class DataManager
         params.put("studentId", studentId);
         params.put("offset", page * 20);
         return session.selectList("vip.floatationdevice.dancegrade.sqlmapper.DanceDataMapper.findData", params);
+    }
+
+    public static int findCount(String name, Integer studentId)
+    {
+        HashMap<String, Object> params = new HashMap<>();
+        params.put("name", name);
+        params.put("studentId", studentId);
+        return session.selectOne("vip.floatationdevice.dancegrade.sqlmapper.DanceDataMapper.findCount", params);
     }
 
 // =============================================================================
