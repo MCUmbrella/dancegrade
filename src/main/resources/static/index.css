@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 2vh;
+}
+
+body {
+    height: 100%;
+    background: #f3eaea;
+}
+
+.body {
+    padding-top: 5vh;
+    width: 100%;
+}
+
+.search {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search .button {
+    box-sizing: border-box;
+    width: 6vh;
+    height: 3vh;
+    background: rgb(116, 196, 228);
+    border-radius: 11%;
+    line-height: 3vh;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+}
+
+.body .data {
+    box-sizing: border-box;
+    margin-top: 6%;
+    width: 100%;
+    /* background: skyblue; */
+    display: flex;
+    flex-direction: column;
+    /* display: none; */
+}
+
+.body .data div {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0 2%;
+    text-align: center;
+}
+
+.body .data div span {
+    display: inline-block;
+    margin-right: 1%;
+    border-bottom: 1px #000 solid;
+}
+
+a {
+    text-decoration: none;
+}
+
+.page {
+    display: table;
+    margin: 100px auto;
+}
+
+.page a {
+    cursor: default;
+    display: inline-block;
+    color: #00C9A6;
+    background-color: #D9F7F2;
+    height: 25px;
+    font-size: 10pt;
+    line-height: 25px;
+    padding: 0 9px;
+    border: 1px solid #D9F7F2;
+    margin: 0 2px;
+    border-radius: 4px;
+    vertical-align: middle;
+}
+
+.page a:not(.disabled):not(.current):hover {
+    border: 1px solid #00C9A6;
+    cursor: pointer;
+}
+
+.page a.current {
+    display: inline-block;
+    font-size: 10pt;
+    height: 25px;
+    line-height: 25px;
+    padding: 0 9px;
+    margin: 0 2px;
+    color: #fff;
+    background-color: #00C9A6;
+    border: 1px solid #00C9A6;
+    border-radius: 4px;
+    vertical-align: middle;
+}
+
+.page a.disabled {
+    display: inline-block;
+    font-size: 10pt;
+    height: 25px;
+    line-height: 25px;
+    padding: 0 9px;
+    margin: 0 2px;
+    color: #ddd;
+    background: #D9F7F2;
+    border: 1px solid #D9F7F2;
+    border-radius: 4px;
+    vertical-align: middle;
+    cursor: no-drop;
+    pointer-events: none;
+
+}
+
+.footer {
+    display: none;
+}
